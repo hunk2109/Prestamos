@@ -58,15 +58,38 @@
             this.rbcedu = new System.Windows.Forms.RadioButton();
             this.dgvverclie = new System.Windows.Forms.DataGridView();
             this.txtbuscclienv = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtnomsol = new System.Windows.Forms.TextBox();
+            this.txtcant = new System.Windows.Forms.TextBox();
+            this.txtgaran = new System.Windows.Forms.TextBox();
+            this.txtfina = new System.Windows.Forms.ComboBox();
+            this.dtppres = new System.Windows.Forms.DateTimePicker();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dgvclienp = new System.Windows.Forms.DataGridView();
+            this.rbnombp = new System.Windows.Forms.RadioButton();
+            this.rbcedulap = new System.Windows.Forms.RadioButton();
+            this.rbidp = new System.Windows.Forms.RadioButton();
+            this.txtbusccp = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtidcliep = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabControl2.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.tabControl3.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabPage6.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvverclie)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvclienp)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -119,10 +142,16 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.txtidcliep);
+            this.tabPage1.Controls.Add(this.label12);
+            this.tabPage1.Controls.Add(this.groupBox3);
+            this.tabPage1.Controls.Add(this.dtppres);
+            this.tabPage1.Controls.Add(this.label10);
+            this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(748, 310);
+            this.tabPage1.Size = new System.Drawing.Size(923, 310);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Nuevo Prestamo";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -380,6 +409,201 @@
             this.txtbuscclienv.TabIndex = 5;
             this.txtbuscclienv.TextChanged += new System.EventHandler(this.txtbuscclienv_TextChanged);
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox2.Controls.Add(this.txtfina);
+            this.groupBox2.Controls.Add(this.txtgaran);
+            this.groupBox2.Controls.Add(this.txtcant);
+            this.groupBox2.Controls.Add(this.txtnomsol);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Location = new System.Drawing.Point(6, 35);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(334, 156);
+            this.groupBox2.TabIndex = 0;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Datos del Prestamo";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(7, 20);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(113, 13);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Nombre del Solicitante";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(7, 57);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(104, 13);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Cantidad a Financiar";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(7, 92);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(93, 13);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "Meses a Financiar";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(371, 15);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(37, 13);
+            this.label10.TabIndex = 3;
+            this.label10.Text = "Fecha";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(7, 130);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(47, 13);
+            this.label11.TabIndex = 3;
+            this.label11.Text = "Garantia";
+            // 
+            // txtnomsol
+            // 
+            this.txtnomsol.Location = new System.Drawing.Point(127, 20);
+            this.txtnomsol.Name = "txtnomsol";
+            this.txtnomsol.ReadOnly = true;
+            this.txtnomsol.Size = new System.Drawing.Size(201, 20);
+            this.txtnomsol.TabIndex = 4;
+            // 
+            // txtcant
+            // 
+            this.txtcant.Location = new System.Drawing.Point(127, 54);
+            this.txtcant.Name = "txtcant";
+            this.txtcant.Size = new System.Drawing.Size(100, 20);
+            this.txtcant.TabIndex = 5;
+            // 
+            // txtgaran
+            // 
+            this.txtgaran.Location = new System.Drawing.Point(127, 127);
+            this.txtgaran.Name = "txtgaran";
+            this.txtgaran.Size = new System.Drawing.Size(166, 20);
+            this.txtgaran.TabIndex = 7;
+            // 
+            // txtfina
+            // 
+            this.txtfina.FormattingEnabled = true;
+            this.txtfina.Items.AddRange(new object[] {
+            "6",
+            "12",
+            "18",
+            "24",
+            "36",
+            "48"});
+            this.txtfina.Location = new System.Drawing.Point(127, 92);
+            this.txtfina.Name = "txtfina";
+            this.txtfina.Size = new System.Drawing.Size(62, 21);
+            this.txtfina.TabIndex = 8;
+            // 
+            // dtppres
+            // 
+            this.dtppres.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtppres.Location = new System.Drawing.Point(415, 11);
+            this.dtppres.Name = "dtppres";
+            this.dtppres.Size = new System.Drawing.Size(82, 20);
+            this.dtppres.TabIndex = 4;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Controls.Add(this.txtbusccp);
+            this.groupBox3.Controls.Add(this.rbidp);
+            this.groupBox3.Controls.Add(this.rbcedulap);
+            this.groupBox3.Controls.Add(this.rbnombp);
+            this.groupBox3.Controls.Add(this.dgvclienp);
+            this.groupBox3.Location = new System.Drawing.Point(503, 15);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(414, 278);
+            this.groupBox3.TabIndex = 5;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Clientes";
+            // 
+            // dgvclienp
+            // 
+            this.dgvclienp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvclienp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvclienp.Location = new System.Drawing.Point(6, 61);
+            this.dgvclienp.Name = "dgvclienp";
+            this.dgvclienp.ReadOnly = true;
+            this.dgvclienp.Size = new System.Drawing.Size(402, 211);
+            this.dgvclienp.TabIndex = 0;
+            // 
+            // rbnombp
+            // 
+            this.rbnombp.AutoSize = true;
+            this.rbnombp.Location = new System.Drawing.Point(49, 20);
+            this.rbnombp.Name = "rbnombp";
+            this.rbnombp.Size = new System.Drawing.Size(62, 17);
+            this.rbnombp.TabIndex = 1;
+            this.rbnombp.TabStop = true;
+            this.rbnombp.Text = "Nombre";
+            this.rbnombp.UseVisualStyleBackColor = true;
+            // 
+            // rbcedulap
+            // 
+            this.rbcedulap.AutoSize = true;
+            this.rbcedulap.Location = new System.Drawing.Point(117, 20);
+            this.rbcedulap.Name = "rbcedulap";
+            this.rbcedulap.Size = new System.Drawing.Size(58, 17);
+            this.rbcedulap.TabIndex = 2;
+            this.rbcedulap.TabStop = true;
+            this.rbcedulap.Text = "Cedula";
+            this.rbcedulap.UseVisualStyleBackColor = true;
+            // 
+            // rbidp
+            // 
+            this.rbidp.AutoSize = true;
+            this.rbidp.Location = new System.Drawing.Point(7, 20);
+            this.rbidp.Name = "rbidp";
+            this.rbidp.Size = new System.Drawing.Size(36, 17);
+            this.rbidp.TabIndex = 3;
+            this.rbidp.TabStop = true;
+            this.rbidp.Text = "ID";
+            this.rbidp.UseVisualStyleBackColor = true;
+            // 
+            // txtbusccp
+            // 
+            this.txtbusccp.Location = new System.Drawing.Point(182, 20);
+            this.txtbusccp.Name = "txtbusccp";
+            this.txtbusccp.Size = new System.Drawing.Size(226, 20);
+            this.txtbusccp.TabIndex = 4;
+            this.txtbusccp.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(7, 14);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(53, 13);
+            this.label12.TabIndex = 6;
+            this.label12.Text = "ID Cliente";
+            // 
+            // txtidcliep
+            // 
+            this.txtidcliep.Location = new System.Drawing.Point(66, 11);
+            this.txtidcliep.Name = "txtidcliep";
+            this.txtidcliep.ReadOnly = true;
+            this.txtidcliep.Size = new System.Drawing.Size(100, 20);
+            this.txtidcliep.TabIndex = 7;
+            // 
             // principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -393,6 +617,8 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.tabControl3.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
             this.tabPage6.ResumeLayout(false);
@@ -400,6 +626,11 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvverclie)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvclienp)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -436,5 +667,24 @@
         private System.Windows.Forms.RadioButton rbid;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtbuscclienv;
+        private System.Windows.Forms.TextBox txtidcliep;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TextBox txtbusccp;
+        private System.Windows.Forms.RadioButton rbidp;
+        private System.Windows.Forms.RadioButton rbcedulap;
+        private System.Windows.Forms.RadioButton rbnombp;
+        private System.Windows.Forms.DataGridView dgvclienp;
+        private System.Windows.Forms.DateTimePicker dtppres;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ComboBox txtfina;
+        private System.Windows.Forms.TextBox txtgaran;
+        private System.Windows.Forms.TextBox txtcant;
+        private System.Windows.Forms.TextBox txtnomsol;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
     }
 }

@@ -27,9 +27,9 @@ namespace Pretamostt
         private void btnguardar_Click(object sender, EventArgs e)
         {
             
-            oper.consultasinreaultado("insert into usuarios (nombres,Apellidos,cedula,direccion,telefono,tipo_usua_id_tipo_user)values('" + txtnombre.Text+"','"+txtapellido.Text+"','"+txtcedula.Text+"','"+txtdireccion.Text+"','"+txttel.Text+"','3')");
+            oper.consultasinreaultado("insert into Usuarios (nombres,Apellidos,cedula,direccion,telefono,tipo_usua_id_tipo_user)values('" + txtnombre.Text+"','"+txtapellido.Text+"','"+txtcedula.Text+"','"+txtdireccion.Text+"','"+txttel.Text+"','3')");
             MessageBox.Show("Datos Guardados");
-            dgvverclie.DataSource = oper.cosnsultaconresultado("Select * from cliente");
+            dgvverclie.DataSource = oper.cosnsultaconresultado("Select * from usuarios where tipo_usua_id_tipo_user = 3 ");
         }
 
         private void tabPage6_Click(object sender, EventArgs e)
@@ -39,7 +39,9 @@ namespace Pretamostt
 
         private void principal_Load(object sender, EventArgs e)
         {
-            dgvverclie.DataSource = oper.cosnsultaconresultado("Select * from cliente");
+            dgvverclie.DataSource = oper.cosnsultaconresultado("Select * from usuarios where tipo_usua_id_tipo_user = 3 ");
+            dgvclienp.DataSource = oper.cosnsultaconresultado("Select * from usuarios where tipo_usua_id_tipo_user = 3 ");
+
         }
 
         private void txtbuscclienv_TextChanged(object sender, EventArgs e)
@@ -59,6 +61,25 @@ namespace Pretamostt
                 dgvverclie.DataSource = oper.cosnsultaconresultado("Select * from usuarios where cedula like '%" + txtbuscclienv.Text + "%'");
             }
 
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if(rbidp.Checked == true)
+            {
+                dgvclienp.DataSource = oper.cosnsultaconresultado("Select * from usuarios  where id_cliente like '%" + txtbusccp.Text + "%'");
+            }
+
+            else if(rbnombp.Checked == true)
+            {
+                dgvverclie.DataSource = oper.cosnsultaconresultado("Select * from usuarios  where nombres like '%" + txtbuscclienv.Text + "%'");
+            }
+
+
+            else if(rbcedulap.Checked == true)
+            {
+                dgvverclie.DataSource = oper.cosnsultaconresultado("Select * from usuarios  where cedula like '%" + txtbuscclienv.Text + "%'");
+            }
         }
     }
 }
