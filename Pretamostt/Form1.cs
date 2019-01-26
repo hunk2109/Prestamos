@@ -25,7 +25,7 @@ namespace Pretamostt
             SqlConnection cnx = new SqlConnection("server = HECTOJO; database = prestamos; integrated security = true;");
             try
             {
-                SqlDataAdapter sda = new SqlDataAdapter("select count(*) from usuario where usuario = '" + txtuser.Text + "' and contraseña = '" + txtpass.Text + "'", cnx);
+                SqlDataAdapter sda = new SqlDataAdapter("select count(*) from usua_sesion where usuario = '" + txtuser.Text + "' and contraseña = '" + txtpass.Text + "'", cnx);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 if (dt.Rows[0][0].ToString() == "1")

@@ -57,6 +57,7 @@
             this.rbnomb = new System.Windows.Forms.RadioButton();
             this.rbcedu = new System.Windows.Forms.RadioButton();
             this.dgvverclie = new System.Windows.Forms.DataGridView();
+            this.txtbuscclienv = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -162,6 +163,7 @@
             // 
             // tabPage6
             // 
+            this.tabPage6.Controls.Add(this.txtbuscclienv);
             this.tabPage6.Controls.Add(this.dgvverclie);
             this.tabPage6.Controls.Add(this.rbcedu);
             this.tabPage6.Controls.Add(this.rbnomb);
@@ -174,6 +176,7 @@
             this.tabPage6.TabIndex = 1;
             this.tabPage6.Text = "Ver Cliente";
             this.tabPage6.UseVisualStyleBackColor = true;
+            this.tabPage6.Click += new System.EventHandler(this.tabPage6_Click);
             // 
             // groupBox1
             // 
@@ -287,6 +290,7 @@
             this.btnguardar.TabIndex = 1;
             this.btnguardar.Text = "Guardar";
             this.btnguardar.UseVisualStyleBackColor = true;
+            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
             // 
             // btnlimp
             // 
@@ -349,7 +353,7 @@
             // rbcedu
             // 
             this.rbcedu.AutoSize = true;
-            this.rbcedu.Location = new System.Drawing.Point(185, 12);
+            this.rbcedu.Location = new System.Drawing.Point(184, 10);
             this.rbcedu.Name = "rbcedu";
             this.rbcedu.Size = new System.Drawing.Size(58, 17);
             this.rbcedu.TabIndex = 3;
@@ -368,6 +372,14 @@
             this.dgvverclie.Size = new System.Drawing.Size(907, 257);
             this.dgvverclie.TabIndex = 4;
             // 
+            // txtbuscclienv
+            // 
+            this.txtbuscclienv.Location = new System.Drawing.Point(248, 9);
+            this.txtbuscclienv.Name = "txtbuscclienv";
+            this.txtbuscclienv.Size = new System.Drawing.Size(197, 20);
+            this.txtbuscclienv.TabIndex = 5;
+            this.txtbuscclienv.TextChanged += new System.EventHandler(this.txtbuscclienv_TextChanged);
+            // 
             // principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -376,6 +388,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "principal";
             this.Text = "Principal";
+            this.Load += new System.EventHandler(this.principal_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
@@ -422,5 +435,6 @@
         private System.Windows.Forms.RadioButton rbnomb;
         private System.Windows.Forms.RadioButton rbid;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtbuscclienv;
     }
 }

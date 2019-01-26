@@ -12,6 +12,8 @@ namespace Pretamostt
 {
     public partial class principal : Form
     {
+        operacionessql oper = new operacionessql();
+
         public principal()
         {
             InitializeComponent();
@@ -19,6 +21,43 @@ namespace Pretamostt
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnguardar_Click(object sender, EventArgs e)
+        {
+            
+            oper.consultasinreaultado("insert into usuarios (nombres,Apellidos,cedula,direccion,telefono,tipo_usua_id_tipo_user)values('" + txtnombre.Text+"','"+txtapellido.Text+"','"+txtcedula.Text+"','"+txtdireccion.Text+"','"+txttel.Text+"','3')");
+            MessageBox.Show("Datos Guardados");
+            dgvverclie.DataSource = oper.cosnsultaconresultado("Select * from cliente");
+        }
+
+        private void tabPage6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void principal_Load(object sender, EventArgs e)
+        {
+            dgvverclie.DataSource = oper.cosnsultaconresultado("Select * from cliente");
+        }
+
+        private void txtbuscclienv_TextChanged(object sender, EventArgs e)
+        {
+            if(rbid.Checked == true)
+            {
+                dgvverclie.DataSource = oper.cosnsultaconresultado("Select * from usuarios  where id_cliente like '%" + txtbuscclienv.Text+"%'");
+            }
+
+            else if(rbnomb.Checked == true)
+            {
+                dgvverclie.DataSource = oper.cosnsultaconresultado("Select * from usuarios  where nombres like '%" + txtbuscclienv.Text + "%'");
+            }
+
+            else if(rbcedu.Checked == true)
+            {
+                dgvverclie.DataSource = oper.cosnsultaconresultado("Select * from usuarios where cedula like '%" + txtbuscclienv.Text + "%'");
+            }
 
         }
     }
