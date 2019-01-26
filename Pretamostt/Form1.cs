@@ -35,6 +35,7 @@ namespace Pretamostt
                     frm.ShowDialog();
                     this.Show();
                     txtpass.Clear();
+                    txtuser.Clear();
 
                 }
 

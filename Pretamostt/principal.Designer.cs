@@ -77,11 +77,23 @@
             this.txtbusccp = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtidcliep = new System.Windows.Forms.TextBox();
+            this.rbverpre = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.txtbuscarpres = new System.Windows.Forms.TextBox();
+            this.dgvprestamos = new System.Windows.Forms.DataGridView();
+            this.btnguarp = new System.Windows.Forms.Button();
+            this.btnlimpp = new System.Windows.Forms.Button();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.tabControl4 = new System.Windows.Forms.TabControl();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.tabPage9 = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.tabControl3.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabPage6.SuspendLayout();
@@ -90,6 +102,9 @@
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvclienp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvprestamos)).BeginInit();
+            this.tabPage7.SuspendLayout();
+            this.tabControl4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -99,6 +114,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage7);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -158,6 +174,11 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.dgvprestamos);
+            this.tabPage4.Controls.Add(this.txtbuscarpres);
+            this.tabPage4.Controls.Add(this.radioButton2);
+            this.tabPage4.Controls.Add(this.radioButton1);
+            this.tabPage4.Controls.Add(this.rbverpre);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -413,6 +434,8 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox2.Controls.Add(this.btnlimpp);
+            this.groupBox2.Controls.Add(this.btnguarp);
             this.groupBox2.Controls.Add(this.txtfina);
             this.groupBox2.Controls.Add(this.txtgaran);
             this.groupBox2.Controls.Add(this.txtcant);
@@ -423,7 +446,7 @@
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Location = new System.Drawing.Point(6, 35);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(334, 156);
+            this.groupBox2.Size = new System.Drawing.Size(334, 201);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos del Prestamo";
@@ -545,6 +568,7 @@
             this.dgvclienp.ReadOnly = true;
             this.dgvclienp.Size = new System.Drawing.Size(402, 211);
             this.dgvclienp.TabIndex = 0;
+            this.dgvclienp.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvclienp_CellContentClick);
             // 
             // rbnombp
             // 
@@ -604,6 +628,115 @@
             this.txtidcliep.Size = new System.Drawing.Size(100, 20);
             this.txtidcliep.TabIndex = 7;
             // 
+            // rbverpre
+            // 
+            this.rbverpre.AutoSize = true;
+            this.rbverpre.Location = new System.Drawing.Point(7, 16);
+            this.rbverpre.Name = "rbverpre";
+            this.rbverpre.Size = new System.Drawing.Size(36, 17);
+            this.rbverpre.TabIndex = 0;
+            this.rbverpre.TabStop = true;
+            this.rbverpre.Text = "ID";
+            this.rbverpre.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(49, 16);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(62, 17);
+            this.radioButton1.TabIndex = 1;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Nombre";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(117, 16);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(58, 17);
+            this.radioButton2.TabIndex = 2;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Cedula";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // txtbuscarpres
+            // 
+            this.txtbuscarpres.Location = new System.Drawing.Point(181, 13);
+            this.txtbuscarpres.Name = "txtbuscarpres";
+            this.txtbuscarpres.Size = new System.Drawing.Size(128, 20);
+            this.txtbuscarpres.TabIndex = 3;
+            // 
+            // dgvprestamos
+            // 
+            this.dgvprestamos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvprestamos.Location = new System.Drawing.Point(7, 39);
+            this.dgvprestamos.Name = "dgvprestamos";
+            this.dgvprestamos.Size = new System.Drawing.Size(910, 255);
+            this.dgvprestamos.TabIndex = 4;
+            // 
+            // btnguarp
+            // 
+            this.btnguarp.Location = new System.Drawing.Point(6, 172);
+            this.btnguarp.Name = "btnguarp";
+            this.btnguarp.Size = new System.Drawing.Size(75, 23);
+            this.btnguarp.TabIndex = 9;
+            this.btnguarp.Text = "Guardar";
+            this.btnguarp.UseVisualStyleBackColor = true;
+            this.btnguarp.Click += new System.EventHandler(this.btnguarp_Click);
+            // 
+            // btnlimpp
+            // 
+            this.btnlimpp.Location = new System.Drawing.Point(114, 172);
+            this.btnlimpp.Name = "btnlimpp";
+            this.btnlimpp.Size = new System.Drawing.Size(75, 23);
+            this.btnlimpp.TabIndex = 10;
+            this.btnlimpp.Text = "Limpiar";
+            this.btnlimpp.UseVisualStyleBackColor = true;
+            this.btnlimpp.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // tabPage7
+            // 
+            this.tabPage7.Controls.Add(this.tabControl4);
+            this.tabPage7.Location = new System.Drawing.Point(4, 22);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage7.Size = new System.Drawing.Size(943, 354);
+            this.tabPage7.TabIndex = 3;
+            this.tabPage7.Text = "Pagos";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // tabControl4
+            // 
+            this.tabControl4.Controls.Add(this.tabPage8);
+            this.tabControl4.Controls.Add(this.tabPage9);
+            this.tabControl4.Location = new System.Drawing.Point(6, 6);
+            this.tabControl4.Name = "tabControl4";
+            this.tabControl4.SelectedIndex = 0;
+            this.tabControl4.Size = new System.Drawing.Size(931, 336);
+            this.tabControl4.TabIndex = 0;
+            // 
+            // tabPage8
+            // 
+            this.tabPage8.Location = new System.Drawing.Point(4, 22);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage8.Size = new System.Drawing.Size(923, 310);
+            this.tabPage8.TabIndex = 0;
+            this.tabPage8.Text = "Agregar Pago";
+            this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // tabPage9
+            // 
+            this.tabPage9.Location = new System.Drawing.Point(4, 22);
+            this.tabPage9.Name = "tabPage9";
+            this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage9.Size = new System.Drawing.Size(923, 310);
+            this.tabPage9.TabIndex = 1;
+            this.tabPage9.Text = "Ver Pagos";
+            this.tabPage9.UseVisualStyleBackColor = true;
+            // 
             // principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -619,6 +752,8 @@
             this.tabControl2.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             this.tabControl3.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
             this.tabPage6.ResumeLayout(false);
@@ -631,6 +766,9 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvclienp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvprestamos)).EndInit();
+            this.tabPage7.ResumeLayout(false);
+            this.tabControl4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -686,5 +824,16 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnlimpp;
+        private System.Windows.Forms.Button btnguarp;
+        private System.Windows.Forms.DataGridView dgvprestamos;
+        private System.Windows.Forms.TextBox txtbuscarpres;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rbverpre;
+        private System.Windows.Forms.TabPage tabPage7;
+        private System.Windows.Forms.TabControl tabControl4;
+        private System.Windows.Forms.TabPage tabPage8;
+        private System.Windows.Forms.TabPage tabPage9;
     }
 }

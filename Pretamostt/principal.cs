@@ -72,14 +72,36 @@ namespace Pretamostt
 
             else if(rbnombp.Checked == true)
             {
-                dgvverclie.DataSource = oper.cosnsultaconresultado("Select * from usuarios  where nombres like '%" + txtbuscclienv.Text + "%'");
+                dgvclienp.DataSource = oper.cosnsultaconresultado("Select * from usuarios  where nombres like '%" + txtbusccp.Text + "%'");
             }
 
 
             else if(rbcedulap.Checked == true)
             {
-                dgvverclie.DataSource = oper.cosnsultaconresultado("Select * from usuarios  where cedula like '%" + txtbuscclienv.Text + "%'");
+                dgvclienp.DataSource = oper.cosnsultaconresultado("Select * from usuarios  where cedula like '%" + txtbusccp.Text + "%'");
             }
+        }
+
+        private void dgvclienp_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow act = dgvclienp.Rows[e.RowIndex];
+            txtidcliep.Text = act.Cells["id_cliente"].Value.ToString();
+            txtnomsol.Text = act.Cells["nombres"].Value.ToString();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnguarp_Click(object sender, EventArgs e)
+        {
+            oper.consultasinreaultado(" insert into prestamo (cantidad,meses,fecha,garantia,Usuarios_id_cliente) values('" + txtcant.Text + "','" + txtfina.Text + "','" + dtppres.Text + "','" + txtgaran.Text + "','" + txtidcliep.Text + "')");
+            dgvprestamos.DataSource = oper.cosnsultaconresultado("select* from prestamo");
+            txtcant.Clear();
+            txtidcliep.Clear();
+            txtnomsol.Clear();
+            txtgaran.Clear();
         }
     }
 }
