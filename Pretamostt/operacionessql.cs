@@ -12,7 +12,7 @@ namespace Pretamostt
     {
         public string conectar()
         {
-            SqlConnection cnx = new SqlConnection("server = HECTOJO; database = DB_FaramaSolutionJD; integrated security = true;");
+            SqlConnection cnx = new SqlConnection("server = HECTOJO; database = prestamos; integrated security = true;");
             try
             {
                 cnx.Open();
@@ -34,7 +34,7 @@ namespace Pretamostt
 
         public string consultasinreaultado(string sql)
         {
-            SqlConnection cnx = new SqlConnection("server = HECTOJO; database = DB_FaramaSolutionJD; integrated security = true;");
+            SqlConnection cnx = new SqlConnection("server = HECTOJO; database = prestamos; integrated security = true;");
             try
             {
                 cnx.Open();
@@ -56,7 +56,7 @@ namespace Pretamostt
         {
             SqlDataAdapter ad;
             DataTable dt = new DataTable();
-            SqlConnection cnx = new SqlConnection("server = HECTOJO; database = DB_FaramaSolutionJD; integrated security = true;");
+            SqlConnection cnx = new SqlConnection("server = HECTOJO; database = prestamos; integrated security = true;");
             try
             {
                 cnx.Open();
