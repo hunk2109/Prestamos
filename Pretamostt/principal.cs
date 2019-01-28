@@ -42,7 +42,7 @@ namespace Pretamostt
             dgvverclie.DataSource = oper.cosnsultaconresultado("Select * from usuarios where tipo_usua_id_tipo_user = 3 ");
             dgvclienp.DataSource = oper.cosnsultaconresultado("Select * from usuarios where tipo_usua_id_tipo_user = 3 ");
             dgvprestamos.DataSource = oper.cosnsultaconresultado("select id_pres, nombres, apellidos,cedula,cantidad, meses,(cantidad/meses) as cuotas,Garantia  from Usuarios inner join prestamo on id_cliente = Usuarios_id_cliente");
-
+            dgvprespag.DataSource = oper.cosnsultaconresultado("select id_pres, nombres, apellidos,cedula,cantidad, meses,(cantidad/meses) as cuotas,Garantia  from Usuarios inner join prestamo on id_cliente = Usuarios_id_cliente");
 
         }
 
@@ -143,6 +143,18 @@ namespace Pretamostt
             f.Show();
 
 
+        }
+
+        private void dgvprespag_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow act = dgvprespag.Rows[e.RowIndex];
+            txtidprespag.Text = act.Cells["id_pres"].Value.ToString();
+        }
+
+        private void btnpag_Click(object sender, EventArgs e)
+        {
+            oper.consultasinreaultado("insert into pagos(cant_pagada,fecha,prestamo_id_pres)values('" + txtcanpag.Text + "','" + dtppag.Text + "','" + txtidprespag.Text + "')");
+            dgvverpagos.DataSource = oper.cosnsultaconresultado("select * from pagos");
         }
     }
 }
