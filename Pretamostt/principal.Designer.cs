@@ -405,8 +405,10 @@
             this.dgvprestamos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvprestamos.Location = new System.Drawing.Point(7, 39);
             this.dgvprestamos.Name = "dgvprestamos";
+            this.dgvprestamos.ReadOnly = true;
             this.dgvprestamos.Size = new System.Drawing.Size(910, 229);
             this.dgvprestamos.TabIndex = 4;
+            this.dgvprestamos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvprestamos_CellContentClick);
             // 
             // txtbuscarpres
             // 
@@ -753,6 +755,7 @@
             this.btnimprp.TabIndex = 5;
             this.btnimprp.Text = "Imprimir";
             this.btnimprp.UseVisualStyleBackColor = true;
+            this.btnimprp.Click += new System.EventHandler(this.btnimprp_Click);
             // 
             // label13
             // 
@@ -767,6 +770,7 @@
             // 
             this.txtidpresimpr.Location = new System.Drawing.Point(493, 13);
             this.txtidpresimpr.Name = "txtidpresimpr";
+            this.txtidpresimpr.ReadOnly = true;
             this.txtidpresimpr.Size = new System.Drawing.Size(135, 20);
             this.txtidpresimpr.TabIndex = 7;
             // 

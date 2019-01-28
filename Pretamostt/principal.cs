@@ -125,5 +125,24 @@ namespace Pretamostt
 
             }
         }
+
+        private void dgvprestamos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow act = dgvprestamos.Rows[e.RowIndex];
+            txtidpresimpr.Text = act.Cells["id_pres"].Value.ToString();
+
+        }
+
+        private void btnimprp_Click(object sender, EventArgs e)
+        {
+            DataSet ds = new DataSet();
+            DataTable dt = oper.cosnsultaconresultado("select id_pres, nombres, apellidos,cedula,cantidad, meses,(cantidad/meses) as cuotas,Garantia  from Usuarios inner join prestamo on id_cliente = Usuarios_id_cliente where id_pres = '" + txtidpresimpr.Text + "';");
+            ds.Tables.Add(dt);
+            ds.WriteXml(@"C:\factura\prestamo.xml");
+            visorimp f = new visorimp();
+            f.Show();
+
+
+        }
     }
 }
