@@ -162,7 +162,7 @@ namespace Pretamostt
         {
             if(rbidprespag.Checked == true)
             {
-                dgvverpagos.DataSource = oper.cosnsultaconresultado("select Usuarios.nombres,Usuarios.Apellidos,Usuarios.cedula, prestamo.fecha, prestamo.cantidad,Pagos.cant_pagada,(prestamo.cantidad-Pagos.cant_pagada) as monto_restante, prestamo.id_pres,Pagos.id_pago  from pagos inner join prestamo on id_pres = prestamo_id_pres inner join Usuarios on id_cliente = Usuarios_id_cliente  where prestamo.id_pres like '%" + txtvusprespag.Text + "%';");
+                dgvverpagos.DataSource = oper.cosnsultaconresultado("select Usuarios.nombres,Usuarios.Apellidos,Usuarios.cedula, prestamo.fecha, prestamo.cantidad,Pagos.cant_pagada,(select SUM(cant_pagada) from Pagos where prestamo_id_pres like '%"+txtvusprespag.Text+ "%' ) as total_pagado,(prestamo.cantidad-(select SUM(cant_pagada) from Pagos where prestamo_id_pres like '%" + txtvusprespag.Text + "%')) as Restante, prestamo.id_pres,Pagos.id_pago  from pagos inner join prestamo on id_pres = prestamo_id_pres inner join Usuarios on id_cliente = Usuarios_id_cliente  where prestamo.id_pres like '%" + txtvusprespag.Text + "%';");
             }
 
             else if(rbnombprepag.Checked == true)
@@ -189,8 +189,28 @@ namespace Pretamostt
         {
             DataGridViewRow act = dgvverpagos.Rows[e.RowIndex];
             txtidpag.Text = act.Cells["id_pago"].Value.ToString();
+            txtidprespago.Text = act.Cells["id_pres"].Value.ToString();
 
 
+        }
+
+        private void btnimprpago_Click(object sender, EventArgs e)
+        {
+            DataSet ds = new DataSet();
+            DataTable dt = oper.cosnsultaconresultado("select Usuarios.nombres, Usuarios.Apellidos, Usuarios.cedula, prestamo.fecha, prestamo.cantidad, Pagos.cant_pagada, (select SUM(cant_pagada) from Pagos where prestamo_id_pres like '%"+txtidprespago.Text+ "%') as total_pagado,(prestamo.cantidad - (select SUM(cant_pagada) from Pagos where prestamo_id_pres like '%" + txtidprespago.Text + "%')) as Restante, prestamo.id_pres,Pagos.id_pago from pagos inner join prestamo on id_pres = prestamo_id_pres inner join Usuarios on id_cliente = Usuarios_id_cliente  where Pagos.id_pago like '%" + txtidpag.Text + "%'; ");
+            ds.Tables.Add(dt);
+            ds.WriteXml(@"C:\factura\pago.xml");
+            pagoimpre f = new pagoimpre();
+            f.Show();
+            
+
+            
+        
+        }
+
+        private void btnveringre_Click(object sender, EventArgs e)
+        {
+            dgvingres.DataSource = oper.cosnsultaconresultado("select Pagos.fecha AS Fecha, SUM(Pagos.cant_pagada) as Total from Pagos where Pagos.fecha between '" + dtpfecha1.Text + "'and '" + dtpfecha2.Text + "'  group by Pagos.fecha   ");
         }
     }
 }

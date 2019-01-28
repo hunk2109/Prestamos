@@ -115,6 +115,15 @@
             this.txtvusprespag = new System.Windows.Forms.TextBox();
             this.txtidpag = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
+            this.btnimprpago = new System.Windows.Forms.Button();
+            this.label20 = new System.Windows.Forms.Label();
+            this.txtidprespago = new System.Windows.Forms.TextBox();
+            this.tabPage10 = new System.Windows.Forms.TabPage();
+            this.dtpfecha1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpfecha2 = new System.Windows.Forms.DateTimePicker();
+            this.label21 = new System.Windows.Forms.Label();
+            this.dgvingres = new System.Windows.Forms.DataGridView();
+            this.btnveringre = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -138,6 +147,8 @@
             this.groupBox4.SuspendLayout();
             this.tabPage9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvverpagos)).BeginInit();
+            this.tabPage10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvingres)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -151,7 +162,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(951, 374);
+            this.tabControl1.Size = new System.Drawing.Size(951, 364);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage2
@@ -160,7 +171,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(943, 348);
+            this.tabPage2.Size = new System.Drawing.Size(943, 338);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Prestamos";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -175,7 +186,7 @@
             this.tabControl2.Location = new System.Drawing.Point(6, 6);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(931, 330);
+            this.tabControl2.Size = new System.Drawing.Size(931, 320);
             this.tabControl2.TabIndex = 0;
             // 
             // tabPage1
@@ -189,7 +200,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(923, 304);
+            this.tabPage1.Size = new System.Drawing.Size(923, 294);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Nuevo Prestamo";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -222,7 +233,7 @@
             this.groupBox3.Controls.Add(this.dgvclienp);
             this.groupBox3.Location = new System.Drawing.Point(503, 15);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(414, 272);
+            this.groupBox3.Size = new System.Drawing.Size(414, 262);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Clientes";
@@ -277,7 +288,7 @@
             this.dgvclienp.Location = new System.Drawing.Point(6, 61);
             this.dgvclienp.Name = "dgvclienp";
             this.dgvclienp.ReadOnly = true;
-            this.dgvclienp.Size = new System.Drawing.Size(402, 205);
+            this.dgvclienp.Size = new System.Drawing.Size(402, 195);
             this.dgvclienp.TabIndex = 0;
             this.dgvclienp.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvclienp_CellContentClick);
             // 
@@ -314,7 +325,7 @@
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Location = new System.Drawing.Point(6, 35);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(334, 195);
+            this.groupBox2.Size = new System.Drawing.Size(334, 207);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos del Prestamo";
@@ -769,7 +780,7 @@
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(943, 348);
+            this.tabPage7.Size = new System.Drawing.Size(943, 338);
             this.tabPage7.TabIndex = 3;
             this.tabPage7.Text = "Pagos";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -781,10 +792,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl4.Controls.Add(this.tabPage8);
             this.tabControl4.Controls.Add(this.tabPage9);
+            this.tabControl4.Controls.Add(this.tabPage10);
             this.tabControl4.Location = new System.Drawing.Point(6, 6);
             this.tabControl4.Name = "tabControl4";
             this.tabControl4.SelectedIndex = 0;
-            this.tabControl4.Size = new System.Drawing.Size(931, 336);
+            this.tabControl4.Size = new System.Drawing.Size(931, 326);
             this.tabControl4.TabIndex = 0;
             // 
             // tabPage8
@@ -954,6 +966,9 @@
             // 
             // tabPage9
             // 
+            this.tabPage9.Controls.Add(this.txtidprespago);
+            this.tabPage9.Controls.Add(this.label20);
+            this.tabPage9.Controls.Add(this.btnimprpago);
             this.tabPage9.Controls.Add(this.label19);
             this.tabPage9.Controls.Add(this.txtidpag);
             this.tabPage9.Controls.Add(this.txtvusprespag);
@@ -966,7 +981,7 @@
             this.tabPage9.Location = new System.Drawing.Point(4, 22);
             this.tabPage9.Name = "tabPage9";
             this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage9.Size = new System.Drawing.Size(923, 310);
+            this.tabPage9.Size = new System.Drawing.Size(923, 300);
             this.tabPage9.TabIndex = 1;
             this.tabPage9.Text = "Ver Pagos";
             this.tabPage9.UseVisualStyleBackColor = true;
@@ -980,7 +995,7 @@
             this.dgvverpagos.Location = new System.Drawing.Point(6, 41);
             this.dgvverpagos.Name = "dgvverpagos";
             this.dgvverpagos.ReadOnly = true;
-            this.dgvverpagos.Size = new System.Drawing.Size(911, 263);
+            this.dgvverpagos.Size = new System.Drawing.Size(911, 215);
             this.dgvverpagos.TabIndex = 0;
             this.dgvverpagos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvverpagos_CellContentClick);
             // 
@@ -1063,6 +1078,92 @@
             this.label19.TabIndex = 8;
             this.label19.Text = "ID del Pago";
             // 
+            // btnimprpago
+            // 
+            this.btnimprpago.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnimprpago.Location = new System.Drawing.Point(7, 262);
+            this.btnimprpago.Name = "btnimprpago";
+            this.btnimprpago.Size = new System.Drawing.Size(75, 36);
+            this.btnimprpago.TabIndex = 9;
+            this.btnimprpago.Text = "Imprimir Pago";
+            this.btnimprpago.UseVisualStyleBackColor = true;
+            this.btnimprpago.Click += new System.EventHandler(this.btnimprpago_Click);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(517, 21);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(65, 13);
+            this.label20.TabIndex = 10;
+            this.label20.Text = "ID Prestamo";
+            // 
+            // txtidprespago
+            // 
+            this.txtidprespago.Location = new System.Drawing.Point(588, 16);
+            this.txtidprespago.Name = "txtidprespago";
+            this.txtidprespago.ReadOnly = true;
+            this.txtidprespago.Size = new System.Drawing.Size(100, 20);
+            this.txtidprespago.TabIndex = 11;
+            // 
+            // tabPage10
+            // 
+            this.tabPage10.Controls.Add(this.btnveringre);
+            this.tabPage10.Controls.Add(this.dgvingres);
+            this.tabPage10.Controls.Add(this.label21);
+            this.tabPage10.Controls.Add(this.dtpfecha2);
+            this.tabPage10.Controls.Add(this.dtpfecha1);
+            this.tabPage10.Location = new System.Drawing.Point(4, 22);
+            this.tabPage10.Name = "tabPage10";
+            this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage10.Size = new System.Drawing.Size(923, 300);
+            this.tabPage10.TabIndex = 2;
+            this.tabPage10.Text = "Ver ingreso de dinero";
+            this.tabPage10.UseVisualStyleBackColor = true;
+            // 
+            // dtpfecha1
+            // 
+            this.dtpfecha1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpfecha1.Location = new System.Drawing.Point(6, 6);
+            this.dtpfecha1.Name = "dtpfecha1";
+            this.dtpfecha1.Size = new System.Drawing.Size(78, 20);
+            this.dtpfecha1.TabIndex = 0;
+            // 
+            // dtpfecha2
+            // 
+            this.dtpfecha2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpfecha2.Location = new System.Drawing.Point(128, 6);
+            this.dtpfecha2.Name = "dtpfecha2";
+            this.dtpfecha2.Size = new System.Drawing.Size(86, 20);
+            this.dtpfecha2.TabIndex = 1;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(90, 12);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(32, 13);
+            this.label21.TabIndex = 2;
+            this.label21.Text = "Entre";
+            // 
+            // dgvingres
+            // 
+            this.dgvingres.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvingres.Location = new System.Drawing.Point(6, 32);
+            this.dgvingres.Name = "dgvingres";
+            this.dgvingres.Size = new System.Drawing.Size(911, 262);
+            this.dgvingres.TabIndex = 3;
+            // 
+            // btnveringre
+            // 
+            this.btnveringre.Location = new System.Drawing.Point(220, 7);
+            this.btnveringre.Name = "btnveringre";
+            this.btnveringre.Size = new System.Drawing.Size(75, 23);
+            this.btnveringre.TabIndex = 4;
+            this.btnveringre.Text = "Ver Ingresos";
+            this.btnveringre.UseVisualStyleBackColor = true;
+            this.btnveringre.Click += new System.EventHandler(this.btnveringre_Click);
+            // 
             // principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1105,6 +1206,9 @@
             this.tabPage9.ResumeLayout(false);
             this.tabPage9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvverpagos)).EndInit();
+            this.tabPage10.ResumeLayout(false);
+            this.tabPage10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvingres)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1198,5 +1302,14 @@
         private System.Windows.Forms.RadioButton rbnombprepag;
         private System.Windows.Forms.RadioButton rbidprespag;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Button btnimprpago;
+        private System.Windows.Forms.TextBox txtidprespago;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TabPage tabPage10;
+        private System.Windows.Forms.Button btnveringre;
+        private System.Windows.Forms.DataGridView dgvingres;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.DateTimePicker dtpfecha2;
+        private System.Windows.Forms.DateTimePicker dtpfecha1;
     }
 }
