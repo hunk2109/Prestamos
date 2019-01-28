@@ -160,6 +160,9 @@ namespace Pretamostt
         {
             oper.consultasinreaultado("insert into pagos(cant_pagada,fecha,prestamo_id_pres)values('" + txtcanpag.Text + "','" + dtppag.Text + "','" + txtidprespag.Text + "')");
             dgvverpagos.DataSource = oper.cosnsultaconresultado("select * from pagos");
+            MessageBox.Show("Pago ingresado!");
+            txtidprespag.Clear();
+            txtcanpag.Clear();
         }
 
         private void txtvusprespag_TextChanged(object sender, EventArgs e)
