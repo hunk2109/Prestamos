@@ -94,7 +94,11 @@ namespace Pretamostt
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            txtidcliep.Clear();
+            txtnomsol.Clear();
+            txtcant.Clear();
+            txtfina.Text = "";
+            txtgaran.Clear();
         }
 
         private void btnguarp_Click(object sender, EventArgs e)
@@ -211,6 +215,15 @@ namespace Pretamostt
         private void btnveringre_Click(object sender, EventArgs e)
         {
             dgvingres.DataSource = oper.cosnsultaconresultado("select Pagos.fecha AS Fecha, SUM(Pagos.cant_pagada) as Total from Pagos where Pagos.fecha between '" + dtpfecha1.Text + "'and '" + dtpfecha2.Text + "'  group by Pagos.fecha   ");
+        }
+
+        private void btnlimp_Click(object sender, EventArgs e)
+        {
+            txtnombre.Clear();
+            txtapellido.Clear();
+            txtdireccion.Clear();
+            txtcedula.Clear();
+            txttel.Clear();
         }
     }
 }
