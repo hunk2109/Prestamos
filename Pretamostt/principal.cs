@@ -41,6 +41,8 @@ namespace Pretamostt
         {
             dgvverclie.DataSource = oper.cosnsultaconresultado("Select * from usuarios where tipo_usua_id_tipo_user = 3 ");
             dgvclienp.DataSource = oper.cosnsultaconresultado("Select * from usuarios where tipo_usua_id_tipo_user = 3 ");
+            dgvprestamos.DataSource = oper.cosnsultaconresultado("select id_pres, nombres, apellidos,cedula,cantidad, meses,(cantidad/meses) as cuotas,Garantia  from Usuarios inner join prestamo on id_cliente = Usuarios_id_cliente");
+
 
         }
 
@@ -97,11 +99,31 @@ namespace Pretamostt
         private void btnguarp_Click(object sender, EventArgs e)
         {
             oper.consultasinreaultado(" insert into prestamo (cantidad,meses,fecha,garantia,Usuarios_id_cliente) values('" + txtcant.Text + "','" + txtfina.Text + "','" + dtppres.Text + "','" + txtgaran.Text + "','" + txtidcliep.Text + "')");
-            dgvprestamos.DataSource = oper.cosnsultaconresultado("select* from prestamo");
+            dgvprestamos.DataSource = oper.cosnsultaconresultado("select id_pres, nombres, apellidos,cedula,cantidad, meses,(cantidad/meses) as cuotas,Garantia  from Usuarios inner join prestamo on id_cliente = Usuarios_id_cliente");
             txtcant.Clear();
             txtidcliep.Clear();
             txtnomsol.Clear();
             txtgaran.Clear();
+        }
+
+        private void txtbuscarpres_TextChanged(object sender, EventArgs e)
+        {
+            if(rbverpre.Checked == true)
+            {
+                dgvprestamos.DataSource = oper.cosnsultaconresultado("select id_pres, nombres, apellidos,cedula,cantidad, meses,(cantidad/meses) as cuotas,Garantia  from Usuarios inner join prestamo on id_cliente = Usuarios_id_cliente where id_pres like '%" + txtbuscarpres.Text + "%';");
+            }
+
+            else if(rbverpnomb.Checked == true)
+            {
+                dgvprestamos.DataSource = oper.cosnsultaconresultado("select id_pres, nombres, apellidos,cedula,cantidad, meses,(cantidad/meses) as cuotas,Garantia  from Usuarios inner join prestamo on id_cliente = Usuarios_id_cliente where nombres like '%" + txtbuscarpres.Text + "%';");
+
+            }
+
+            else if(rbverpcedu.Checked == true)
+            {
+                dgvprestamos.DataSource =  oper.cosnsultaconresultado("select id_pres, nombres, apellidos,cedula,cantidad, meses,(cantidad/meses) as cuotas,Garantia  from Usuarios inner join prestamo on id_cliente = Usuarios_id_cliente where cedula like '%" + txtbuscarpres.Text + "%';");
+
+            }
         }
     }
 }
