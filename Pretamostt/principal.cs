@@ -41,9 +41,11 @@ namespace Pretamostt
         {
             dgvverclie.DataSource = oper.cosnsultaconresultado("Select * from usuarios where tipo_usua_id_tipo_user = 3 ");
             dgvclienp.DataSource = oper.cosnsultaconresultado("Select * from usuarios where tipo_usua_id_tipo_user = 3 ");
-            dgvprestamos.DataSource = oper.cosnsultaconresultado("select id_pres, nombres, apellidos,cedula,cantidad, meses,(cantidad/meses) as cuotas,Garantia  from Usuarios inner join prestamo on id_cliente = Usuarios_id_cliente");
+            dgvprestamos.DataSource = oper.cosnsultaconresultado("select id_pres, nombres, apellidos,cedula,cantidad, meses,interes,((cantidad*(interes/100)) +cantidad)/meses as cuotas,Garantia  from Usuarios inner join prestamo on id_cliente = Usuarios_id_cliente");
             dgvprespag.DataSource = oper.cosnsultaconresultado("select id_pres, nombres, apellidos,cedula,cantidad, meses,(cantidad/meses) as cuotas,Garantia  from Usuarios inner join prestamo on id_cliente = Usuarios_id_cliente");
             dgvverpagos.DataSource = oper.cosnsultaconresultado("select Usuarios.nombres,Usuarios.Apellidos,Usuarios.cedula, prestamo.fecha, prestamo.cantidad,Pagos.cant_pagada,(prestamo.cantidad-Pagos.cant_pagada) as monto_restante, prestamo.id_pres,Pagos.id_pago  from pagos inner join prestamo on id_pres = prestamo_id_pres inner join Usuarios on id_cliente = Usuarios_id_cliente;");
+            dgvclientbuscarm.DataSource = oper.cosnsultaconresultado("Select * from usuarios where tipo_usua_id_tipo_user = 3 ");
+
 
         }
 
@@ -103,8 +105,8 @@ namespace Pretamostt
 
         private void btnguarp_Click(object sender, EventArgs e)
         {
-            oper.consultasinreaultado(" insert into prestamo (cantidad,meses,fecha,garantia,Usuarios_id_cliente) values('" + txtcant.Text + "','" + txtfina.Text + "','" + dtppres.Text + "','" + txtgaran.Text + "','" + txtidcliep.Text + "')");
-            dgvprestamos.DataSource = oper.cosnsultaconresultado("select id_pres, nombres, apellidos,cedula,cantidad, meses,(cantidad/meses) as cuotas,Garantia  from Usuarios inner join prestamo on id_cliente = Usuarios_id_cliente");
+            oper.consultasinreaultado(" insert into prestamo (cantidad,meses,interes,fecha,garantia,Usuarios_id_cliente) values('" + txtcant.Text + "','" + txtfina.Text + "','"+txtineres.Text+"','" + dtppres.Text + "','" + txtgaran.Text + "','" + txtidcliep.Text + "')");
+            dgvprestamos.DataSource = oper.cosnsultaconresultado("select id_pres, nombres, apellidos,cedula,cantidad, meses,interes,((cantidad*(interes/100)) +cantidad)/meses, as cuotas,Garantia  from Usuarios inner join prestamo on id_cliente = Usuarios_id_cliente");
             txtcant.Clear();
             txtidcliep.Clear();
             txtnomsol.Clear();
@@ -227,6 +229,41 @@ namespace Pretamostt
             txtdireccion.Clear();
             txtcedula.Clear();
             txttel.Clear();
+        }
+
+        private void dgvclientbuscarm_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow act = dgvclientbuscarm.Rows[e.RowIndex];
+            txtidclienmod.Text = act.Cells["id_cliente"].Value.ToString();
+            txtnombre.Text = act.Cells["nombres"].Value.ToString();
+            txtapellido.Text = act.Cells["apellidos"].Value.ToString();
+            txtcedula.Text = act.Cells["cedula"].Value.ToString();
+            txtdireccion.Text = act.Cells["direccion"].Value.ToString();
+            txttel.Text = act.Cells["telefono"].Value.ToString();
+
+        }
+
+        private void btnborrac_Click(object sender, EventArgs e)
+        {
+            DialogResult result
+               = MessageBox.Show("Seguro que desea borrar?", "Borrar", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                oper.consultasinreaultado("delete from usuarios where id_cliente ='" + txtidclienmod.Text + "'");
+                MessageBox.Show("Datos borrados");
+                dgvclientbuscarm.DataSource = oper.cosnsultaconresultado("select * from usuarios");
+            }
+        }
+
+        private void btnmodifcl_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Seguro que desea Modificar?", "Borrar", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                oper.consultasinreaultado("update usuarios set nombres ='"+txtnombre.Text+"',apellidos ='"+txtapellido.Text+"',cedula ='"+txtcedula.Text+"',direccion ='"+txtdireccion.Text+"',telefono ='"+txttel.Text+"' ");
+                MessageBox.Show("Datos borrados");
+                dgvclientbuscarm.DataSource = oper.cosnsultaconresultado("select * from usuarios");
+            }
         }
     }
 }

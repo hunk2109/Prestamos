@@ -122,6 +122,17 @@
             this.label21 = new System.Windows.Forms.Label();
             this.dtpfecha2 = new System.Windows.Forms.DateTimePicker();
             this.dtpfecha1 = new System.Windows.Forms.DateTimePicker();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.dgvclientbuscarm = new System.Windows.Forms.DataGridView();
+            this.btnborrac = new System.Windows.Forms.Button();
+            this.btnmodifcl = new System.Windows.Forms.Button();
+            this.txtbucarm = new System.Windows.Forms.TextBox();
+            this.rbnommod = new System.Windows.Forms.RadioButton();
+            this.rbcedumod = new System.Windows.Forms.RadioButton();
+            this.txtidclienmod = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.txtineres = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -147,6 +158,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvverpagos)).BeginInit();
             this.tabPage10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvingres)).BeginInit();
+            this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvclientbuscarm)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -311,6 +324,8 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox2.Controls.Add(this.txtineres);
+            this.groupBox2.Controls.Add(this.label23);
             this.groupBox2.Controls.Add(this.btnlimpp);
             this.groupBox2.Controls.Add(this.btnguarp);
             this.groupBox2.Controls.Add(this.txtfina);
@@ -323,14 +338,14 @@
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Location = new System.Drawing.Point(6, 35);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(334, 207);
+            this.groupBox2.Size = new System.Drawing.Size(334, 236);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos del Prestamo";
             // 
             // btnlimpp
             // 
-            this.btnlimpp.Location = new System.Drawing.Point(114, 172);
+            this.btnlimpp.Location = new System.Drawing.Point(87, 207);
             this.btnlimpp.Name = "btnlimpp";
             this.btnlimpp.Size = new System.Drawing.Size(75, 23);
             this.btnlimpp.TabIndex = 10;
@@ -340,7 +355,7 @@
             // 
             // btnguarp
             // 
-            this.btnguarp.Location = new System.Drawing.Point(6, 172);
+            this.btnguarp.Location = new System.Drawing.Point(6, 207);
             this.btnguarp.Name = "btnguarp";
             this.btnguarp.Size = new System.Drawing.Size(75, 23);
             this.btnguarp.TabIndex = 9;
@@ -358,14 +373,14 @@
             "24",
             "36",
             "48"});
-            this.txtfina.Location = new System.Drawing.Point(127, 92);
+            this.txtfina.Location = new System.Drawing.Point(127, 122);
             this.txtfina.Name = "txtfina";
             this.txtfina.Size = new System.Drawing.Size(62, 21);
             this.txtfina.TabIndex = 8;
             // 
             // txtgaran
             // 
-            this.txtgaran.Location = new System.Drawing.Point(127, 127);
+            this.txtgaran.Location = new System.Drawing.Point(127, 157);
             this.txtgaran.Name = "txtgaran";
             this.txtgaran.Size = new System.Drawing.Size(166, 20);
             this.txtgaran.TabIndex = 7;
@@ -388,7 +403,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(7, 130);
+            this.label11.Location = new System.Drawing.Point(7, 160);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(47, 13);
             this.label11.TabIndex = 3;
@@ -397,7 +412,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(7, 92);
+            this.label9.Location = new System.Drawing.Point(7, 125);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(93, 13);
             this.label9.TabIndex = 2;
@@ -544,6 +559,9 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.label22);
+            this.tabPage5.Controls.Add(this.txtidclienmod);
+            this.tabPage5.Controls.Add(this.groupBox5);
             this.tabPage5.Controls.Add(this.groupBox1);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
@@ -555,6 +573,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnmodifcl);
+            this.groupBox1.Controls.Add(this.btnborrac);
             this.groupBox1.Controls.Add(this.btnlimp);
             this.groupBox1.Controls.Add(this.txttel);
             this.groupBox1.Controls.Add(this.btnguardar);
@@ -1143,6 +1163,114 @@
             this.dtpfecha1.Size = new System.Drawing.Size(78, 20);
             this.dtpfecha1.TabIndex = 0;
             // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.rbcedumod);
+            this.groupBox5.Controls.Add(this.rbnommod);
+            this.groupBox5.Controls.Add(this.txtbucarm);
+            this.groupBox5.Controls.Add(this.dgvclientbuscarm);
+            this.groupBox5.Location = new System.Drawing.Point(602, 6);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(314, 280);
+            this.groupBox5.TabIndex = 1;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Cliente";
+            // 
+            // dgvclientbuscarm
+            // 
+            this.dgvclientbuscarm.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvclientbuscarm.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvclientbuscarm.Location = new System.Drawing.Point(6, 43);
+            this.dgvclientbuscarm.Name = "dgvclientbuscarm";
+            this.dgvclientbuscarm.ReadOnly = true;
+            this.dgvclientbuscarm.Size = new System.Drawing.Size(288, 237);
+            this.dgvclientbuscarm.TabIndex = 0;
+            this.dgvclientbuscarm.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvclientbuscarm_CellContentClick);
+            // 
+            // btnborrac
+            // 
+            this.btnborrac.Location = new System.Drawing.Point(178, 212);
+            this.btnborrac.Name = "btnborrac";
+            this.btnborrac.Size = new System.Drawing.Size(75, 23);
+            this.btnborrac.TabIndex = 9;
+            this.btnborrac.Text = "Borrar";
+            this.btnborrac.UseVisualStyleBackColor = true;
+            this.btnborrac.Click += new System.EventHandler(this.btnborrac_Click);
+            // 
+            // btnmodifcl
+            // 
+            this.btnmodifcl.Location = new System.Drawing.Point(259, 212);
+            this.btnmodifcl.Name = "btnmodifcl";
+            this.btnmodifcl.Size = new System.Drawing.Size(75, 23);
+            this.btnmodifcl.TabIndex = 10;
+            this.btnmodifcl.Text = "Modificar";
+            this.btnmodifcl.UseVisualStyleBackColor = true;
+            this.btnmodifcl.Click += new System.EventHandler(this.btnmodifcl_Click);
+            // 
+            // txtbucarm
+            // 
+            this.txtbucarm.Location = new System.Drawing.Point(144, 17);
+            this.txtbucarm.Name = "txtbucarm";
+            this.txtbucarm.Size = new System.Drawing.Size(150, 20);
+            this.txtbucarm.TabIndex = 2;
+            // 
+            // rbnommod
+            // 
+            this.rbnommod.AutoSize = true;
+            this.rbnommod.Location = new System.Drawing.Point(7, 20);
+            this.rbnommod.Name = "rbnommod";
+            this.rbnommod.Size = new System.Drawing.Size(62, 17);
+            this.rbnommod.TabIndex = 3;
+            this.rbnommod.TabStop = true;
+            this.rbnommod.Text = "Nombre";
+            this.rbnommod.UseVisualStyleBackColor = true;
+            // 
+            // rbcedumod
+            // 
+            this.rbcedumod.AutoSize = true;
+            this.rbcedumod.Location = new System.Drawing.Point(76, 20);
+            this.rbcedumod.Name = "rbcedumod";
+            this.rbcedumod.Size = new System.Drawing.Size(58, 17);
+            this.rbcedumod.TabIndex = 4;
+            this.rbcedumod.TabStop = true;
+            this.rbcedumod.Text = "Cedula";
+            this.rbcedumod.UseVisualStyleBackColor = true;
+            // 
+            // txtidclienmod
+            // 
+            this.txtidclienmod.Location = new System.Drawing.Point(411, 7);
+            this.txtidclienmod.Name = "txtidclienmod";
+            this.txtidclienmod.ReadOnly = true;
+            this.txtidclienmod.Size = new System.Drawing.Size(100, 20);
+            this.txtidclienmod.TabIndex = 2;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(387, 10);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(18, 13);
+            this.label22.TabIndex = 3;
+            this.label22.Text = "ID";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(10, 93);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(39, 13);
+            this.label23.TabIndex = 11;
+            this.label23.Text = "Interes";
+            // 
+            // txtineres
+            // 
+            this.txtineres.Location = new System.Drawing.Point(127, 90);
+            this.txtineres.Name = "txtineres";
+            this.txtineres.Size = new System.Drawing.Size(100, 20);
+            this.txtineres.TabIndex = 12;
+            // 
             // principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1168,6 +1296,7 @@
             this.tabPage3.ResumeLayout(false);
             this.tabControl3.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabPage6.ResumeLayout(false);
@@ -1188,6 +1317,9 @@
             this.tabPage10.ResumeLayout(false);
             this.tabPage10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvingres)).EndInit();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvclientbuscarm)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1288,5 +1420,16 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.DateTimePicker dtpfecha2;
         private System.Windows.Forms.DateTimePicker dtpfecha1;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.RadioButton rbcedumod;
+        private System.Windows.Forms.RadioButton rbnommod;
+        private System.Windows.Forms.TextBox txtbucarm;
+        private System.Windows.Forms.DataGridView dgvclientbuscarm;
+        private System.Windows.Forms.Button btnmodifcl;
+        private System.Windows.Forms.Button btnborrac;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox txtidclienmod;
+        private System.Windows.Forms.TextBox txtineres;
+        private System.Windows.Forms.Label label23;
     }
 }
