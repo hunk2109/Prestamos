@@ -12,6 +12,9 @@ namespace Pretamostt
     {
         public string conectar()
         {
+
+
+
             SqlConnection cnx = new SqlConnection("server = HECTOJO; database = prestamos; integrated security = true;");
             try
             {

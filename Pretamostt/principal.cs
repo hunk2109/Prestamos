@@ -11,7 +11,9 @@ using System.Windows.Forms;
 namespace Pretamostt
 {
     public partial class principal : Form
+
     {
+
         operacionessql oper = new operacionessql();
 
         public principal()
@@ -45,6 +47,9 @@ namespace Pretamostt
             dgvprespag.DataSource = oper.cosnsultaconresultado("select id_pres, nombres, apellidos,cedula,cantidad, meses,(cantidad/meses) as cuotas,Garantia  from Usuarios inner join prestamo on id_cliente = Usuarios_id_cliente");
             dgvverpagos.DataSource = oper.cosnsultaconresultado("select Usuarios.nombres,Usuarios.Apellidos,Usuarios.cedula, prestamo.fecha, prestamo.cantidad,Pagos.cant_pagada,(prestamo.cantidad-Pagos.cant_pagada) as monto_restante, prestamo.id_pres,Pagos.id_pago  from pagos inner join prestamo on id_pres = prestamo_id_pres inner join Usuarios on id_cliente = Usuarios_id_cliente;");
             dgvclientbuscarm.DataSource = oper.cosnsultaconresultado("Select * from usuarios where tipo_usua_id_tipo_user = 3 ");
+            dgvusuarios.DataSource = oper.cosnsultaconresultado("select * from usua_sesion");
+
+
 
 
         }
@@ -243,8 +248,9 @@ namespace Pretamostt
 
         }
 
-        private void btnborrac_Click(object sender, EventArgs e)
+        public void btnborrac_Click(object sender, EventArgs e)
         {
+
             DialogResult result
                = MessageBox.Show("Seguro que desea borrar?", "Borrar", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
@@ -255,8 +261,9 @@ namespace Pretamostt
             }
         }
 
-        private void btnmodifcl_Click(object sender, EventArgs e)
+        public void btnmodifcl_Click(object sender, EventArgs e)
         {
+            
             DialogResult result = MessageBox.Show("Seguro que desea Modificar?", "Borrar", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
@@ -264,6 +271,97 @@ namespace Pretamostt
                 MessageBox.Show("Datos borrados");
                 dgvclientbuscarm.DataSource = oper.cosnsultaconresultado("select * from usuarios");
             }
+        }
+
+
+       
+
+        private bool isAdmin;
+
+        public bool IsAdmin
+        {
+            get
+            {
+                return isAdmin;
+            }
+
+            set
+            {
+                isAdmin = value;
+                btnborrac.Visible = isAdmin;
+                btnmodifcl.Visible = isAdmin;
+                gbcliente.Visible = isAdmin;
+                tabamin2.Visible = isAdmin;
+                label22.Visible = isAdmin;
+                txtidclienmod.Visible = isAdmin;
+            }
+        }
+
+        private void btnagreusar_Click(object sender, EventArgs e)
+        {
+            if(rbadmin.Checked == true)
+            {
+                oper.consultasinreaultado("insert usua_sesion(usuario,contraseña,tipo_usua_id_tipo_user)values('" + txtagreusua.Text + "',convert (varbinary, '" + txtagrecontra.Text + "'),'1')");
+
+            }
+
+            else if(rbempl.Checked == true)
+            {
+                oper.consultasinreaultado("insert usua_sesion(usuario,contraseña,tipo_usua_id_tipo_user)values('" + txtagreusua.Text + "',convert (varbinary, '" + txtagrecontra.Text + "'),'2')");
+
+            }
+
+            else
+            {
+                MessageBox.Show("Seleccione un nivel de Usario");
+            }
+        }
+
+        private void btnmodusua_Click(object sender, EventArgs e)
+        {
+           
+
+           
+                DialogResult result = MessageBox.Show("Seguro que desea Modificar?", "Borrar", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                if (rbadmin.Checked == true)
+                {
+                    oper.consultasinreaultado("update usua_sesion set usuario ='" + txtagreusua.Text + "',contraseña ='" + txtagrecontra.Text + "',tipo_usua_id_tipo_user ='1' ");
+                    MessageBox.Show("Datos actualisados");
+                    dgvusuarios.DataSource = oper.cosnsultaconresultado("select * from usuarios");
+                }
+
+                else if(rbempl.Checked ==true)
+                {
+                    oper.consultasinreaultado("update usua_sesion set usuario ='" + txtagreusua.Text + "',contraseña ='" + txtagrecontra.Text + "',tipo_usua_id_tipo_user ='2' ");
+                    MessageBox.Show("Datos actualisados");
+                    dgvusuarios.DataSource = oper.cosnsultaconresultado("select * from usuarios");
+
+                }
+            }
+
+            
+        }
+
+        private void btnborrusua_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Seguro que desea borrar?", "Borrar", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                oper.consultasinreaultado("delete from usua_sesion where id_user ='" + txtidusua_ses.Text + "'");
+                MessageBox.Show("Datos borrados");
+                dgvusuarios.DataSource = oper.cosnsultaconresultado("select * from usua_sesion");
+            }
+        }
+
+        private void dgvusuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow act = dgvusuarios.Rows[e.RowIndex];
+            txtidusua_ses.Text = act.Cells["id_user"].Value.ToString();
+            txtagreusua.Text = act.Cells["usuario"].Value.ToString();
+            txtagrecontra.Text = act.Cells["contraseña"].Value.ToString();
+
         }
     }
 }
