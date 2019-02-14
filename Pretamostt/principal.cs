@@ -43,11 +43,12 @@ namespace Pretamostt
         {
             dgvverclie.DataSource = oper.cosnsultaconresultado("Select * from usuarios where tipo_usua_id_tipo_user = 3 ");
             dgvclienp.DataSource = oper.cosnsultaconresultado("Select * from usuarios where tipo_usua_id_tipo_user = 3 ");
-            dgvprestamos.DataSource = oper.cosnsultaconresultado("select id_pres, nombres, apellidos,cedula,cantidad, meses,interes,((cantidad*(interes/100)) +cantidad)/meses as cuotas,Garantia  from Usuarios inner join prestamo on id_cliente = Usuarios_id_cliente");
+            dgvprestamos.DataSource = oper.cosnsultaconresultado("select id_pres, nombres, apellidos,cedula,cantidad, meses,interes,cantidad*(interes/100) as i1,((cantidad*(interes/100)) +cantidad)/meses as cuotas,Garantia  from Usuarios inner join prestamo on id_cliente = Usuarios_id_cliente");
             dgvprespag.DataSource = oper.cosnsultaconresultado("select id_pres, nombres, apellidos,cedula,cantidad, meses,(cantidad/meses) as cuotas,Garantia  from Usuarios inner join prestamo on id_cliente = Usuarios_id_cliente");
             dgvverpagos.DataSource = oper.cosnsultaconresultado("select Usuarios.nombres,Usuarios.Apellidos,Usuarios.cedula, prestamo.fecha, prestamo.cantidad,Pagos.cant_pagada,(prestamo.cantidad-Pagos.cant_pagada) as monto_restante, prestamo.id_pres,Pagos.id_pago  from pagos inner join prestamo on id_pres = prestamo_id_pres inner join Usuarios on id_cliente = Usuarios_id_cliente;");
             dgvclientbuscarm.DataSource = oper.cosnsultaconresultado("Select * from usuarios where tipo_usua_id_tipo_user = 3 ");
             dgvusuarios.DataSource = oper.cosnsultaconresultado("select * from usua_sesion");
+            dgvmoodprest.DataSource = oper.cosnsultaconresultado("select id_pres, nombres,apellidos,cantidad,meses,interes,fecha,Garantia from prestamo inner join Usuarios on id_cliente = Usuarios_id_cliente");
 
 
 
@@ -111,11 +112,12 @@ namespace Pretamostt
         private void btnguarp_Click(object sender, EventArgs e)
         {
             oper.consultasinreaultado(" insert into prestamo (cantidad,meses,interes,fecha,garantia,Usuarios_id_cliente) values('" + txtcant.Text + "','" + txtfina.Text + "','"+txtineres.Text+"','" + dtppres.Text + "','" + txtgaran.Text + "','" + txtidcliep.Text + "')");
-            dgvprestamos.DataSource = oper.cosnsultaconresultado("select id_pres, nombres, apellidos,cedula,cantidad, meses,interes,((cantidad*(interes/100)) +cantidad)/meses, as cuotas,Garantia  from Usuarios inner join prestamo on id_cliente = Usuarios_id_cliente");
+            dgvprestamos.DataSource = oper.cosnsultaconresultado("select id_pres, nombres, apellidos,cedula,cantidad, meses,interes,cantidad*(interes/100) as i1,((cantidad*(interes/100)) +cantidad)/meses as cuotas,Garantia  from Usuarios inner join prestamo on id_cliente = Usuarios_id_cliente");
             txtcant.Clear();
             txtidcliep.Clear();
             txtnomsol.Clear();
             txtgaran.Clear();
+            txtineres.Clear();
         }
 
         private void txtbuscarpres_TextChanged(object sender, EventArgs e)
@@ -302,18 +304,22 @@ namespace Pretamostt
             if(rbadmin.Checked == true)
             {
                 oper.consultasinreaultado("insert usua_sesion(usuario,contraseña,tipo_usua_id_tipo_user)values('" + txtagreusua.Text + "',convert (varbinary, '" + txtagrecontra.Text + "'),'1')");
+                dgvusuarios.DataSource = oper.cosnsultaconresultado("select * from usua_sesion");
+
 
             }
 
             else if(rbempl.Checked == true)
             {
                 oper.consultasinreaultado("insert usua_sesion(usuario,contraseña,tipo_usua_id_tipo_user)values('" + txtagreusua.Text + "',convert (varbinary, '" + txtagrecontra.Text + "'),'2')");
+                dgvusuarios.DataSource = oper.cosnsultaconresultado("select * from usua_sesion");
+
 
             }
 
             else
             {
-                MessageBox.Show("Seleccione un nivel de Usario");
+                MessageBox.Show("Seleccione un nivel de Usuario");
             }
         }
 
@@ -329,14 +335,14 @@ namespace Pretamostt
                 {
                     oper.consultasinreaultado("update usua_sesion set usuario ='" + txtagreusua.Text + "',contraseña ='" + txtagrecontra.Text + "',tipo_usua_id_tipo_user ='1' ");
                     MessageBox.Show("Datos actualisados");
-                    dgvusuarios.DataSource = oper.cosnsultaconresultado("select * from usuarios");
+                    dgvusuarios.DataSource = oper.cosnsultaconresultado("select * from usua_sesion");
                 }
 
                 else if(rbempl.Checked ==true)
                 {
                     oper.consultasinreaultado("update usua_sesion set usuario ='" + txtagreusua.Text + "',contraseña ='" + txtagrecontra.Text + "',tipo_usua_id_tipo_user ='2' ");
                     MessageBox.Show("Datos actualisados");
-                    dgvusuarios.DataSource = oper.cosnsultaconresultado("select * from usuarios");
+                    dgvusuarios.DataSource = oper.cosnsultaconresultado("select * from usua_sesion");
 
                 }
             }
@@ -362,6 +368,48 @@ namespace Pretamostt
             txtagreusua.Text = act.Cells["usuario"].Value.ToString();
             txtagrecontra.Text = act.Cells["contraseña"].Value.ToString();
 
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvmoodprest_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow act = dgvmoodprest.Rows[e.RowIndex];
+            txtidmodpres.Text = act.Cells["id_pres"].Value.ToString();
+            txtcantmodpres.Text = act.Cells["cantidad"].Value.ToString();
+            cmbmesesmodpres.Text = act.Cells["meses"].Value.ToString();
+            txtintmodpres.Text = act.Cells["interes"].Value.ToString();
+            dtpfechmodpres.Text = act.Cells["fecha"].Value.ToString();
+            txtgarantmodpres.Text = act.Cells["garantia"].Value.ToString();
+
+        }
+
+        private void btnmodpres_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Seguro que desea Modificar?", "Actualizar", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                oper.consultasinreaultado("update prestamo set cantidad ='" + txtcantmodpres.Text + "',meses ='" + cmbmesesmodpres.Text + "',interes ='" + txtintmodpres.Text + "',fecha ='" + dtpfechmodpres.Text + "',garantia ='" + txtgarantmodpres.Text + "' where id_pres ='" + txtidmodpres.Text + "'");
+                MessageBox.Show("Datos Actualizados");
+                dgvmoodprest.DataSource = oper.cosnsultaconresultado("select id_pres, nombres,apellidos,cantidad,meses,interes,fecha,Garantia from prestamo inner join Usuarios on id_cliente = Usuarios_id_cliente");
+
+            }
+
+        }
+
+        private void btnborrarpres_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Seguro que desea Borrar?", "Borrar", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                oper.consultasinreaultado("delete from prestamo where id_pres ='" + txtidmodpres.Text + "'");
+                MessageBox.Show("Prestamos Borrados");
+                dgvmoodprest.DataSource = oper.cosnsultaconresultado("select id_pres, nombres,apellidos,cantidad,meses,interes,fecha,Garantia from prestamo inner join Usuarios on id_cliente = Usuarios_id_cliente");
+
+            }
         }
     }
 }
