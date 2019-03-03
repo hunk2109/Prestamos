@@ -14,7 +14,7 @@ namespace Pretamostt
     
     public partial class Form1 : Form
     {
-        SqlConnection cnx = new SqlConnection("server = COOPEGAS-PC; database = prestamos; integrated security = true;");
+        SqlConnection cnx = new SqlConnection("server = HECTOJO; database = prestamos; integrated security = true;");
         public Form1()
         {
             InitializeComponent();
@@ -22,7 +22,7 @@ namespace Pretamostt
 
         private void btnentrar_Click(object sender, EventArgs e)
         {
-            SqlConnection cnx = new SqlConnection("server = COOPEGAS-PC; database = prestamos; integrated security = true;");
+            SqlConnection cnx = new SqlConnection("server = HECTOJO; database = prestamos; integrated security = true;");
             try
             {
                 if (cmbtipouser.Text == "Administrador")

@@ -336,6 +336,9 @@ namespace Pretamostt
                     oper.consultasinreaultado("update usua_sesion set usuario ='" + txtagreusua.Text + "',contraseña ='" + txtagrecontra.Text + "',tipo_usua_id_tipo_user ='1' where id_user = '"+txtidusua_ses.Text+"' ");
                     MessageBox.Show("Datos actualisados");
                     dgvusuarios.DataSource = oper.cosnsultaconresultado("select * from usua_sesion");
+                    txtagrecontra.Clear();
+                    txtagreusua.Clear();
+                    txtidusua_ses.Clear();
                 }
 
                 else if(rbempl.Checked ==true)
@@ -343,6 +346,10 @@ namespace Pretamostt
                     oper.consultasinreaultado("update usua_sesion set usuario ='" + txtagreusua.Text + "',contraseña ='" + txtagrecontra.Text + "',tipo_usua_id_tipo_user ='2' where id_user = '" + txtidusua_ses.Text + "' ");
                     MessageBox.Show("Datos actualisados");
                     dgvusuarios.DataSource = oper.cosnsultaconresultado("select * from usua_sesion");
+                    txtagrecontra.Clear();
+                    txtagreusua.Clear();
+                    txtidusua_ses.Clear();
+
 
                 }
             }
@@ -357,7 +364,8 @@ namespace Pretamostt
             {
                 oper.consultasinreaultado("delete from usua_sesion where id_user ='" + txtidusua_ses.Text + "'");
                 MessageBox.Show("Datos borrados");
-                dgvusuarios.DataSource = oper.cosnsultaconresultado("select * from usua_sesion");
+                dgvusuarios.DataSource = oper.cosnsultaconresultado("select * from usua_sesion");               
+                txtidusua_ses.Clear();
             }
         }
 
