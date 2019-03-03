@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28010.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pretamostt", "Pretamostt\Pretamostt.csproj", "{65FBFB91-E184-407C-AF86-D5DDFCD73866}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup1", "Setup1\Setup1.vdproj", "{D76A78D8-C6DB-4344-963A-78AA8716555C}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Copegas-Prestamos", "Copegas-Prestamos\Copegas-Prestamos.vdproj", "{8CB87BCC-7D74-4BDC-9CAF-1092C56993AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{65FBFB91-E184-407C-AF86-D5DDFCD73866}.Release|Any CPU.Build.0 = Release|Any CPU
 		{65FBFB91-E184-407C-AF86-D5DDFCD73866}.Release|x64.ActiveCfg = Release|x64
 		{65FBFB91-E184-407C-AF86-D5DDFCD73866}.Release|x64.Build.0 = Release|x64
-		{D76A78D8-C6DB-4344-963A-78AA8716555C}.Debug|Any CPU.ActiveCfg = Debug
-		{D76A78D8-C6DB-4344-963A-78AA8716555C}.Debug|x64.ActiveCfg = Debug
-		{D76A78D8-C6DB-4344-963A-78AA8716555C}.Release|Any CPU.ActiveCfg = Release
-		{D76A78D8-C6DB-4344-963A-78AA8716555C}.Release|x64.ActiveCfg = Release
+		{8CB87BCC-7D74-4BDC-9CAF-1092C56993AB}.Debug|Any CPU.ActiveCfg = Debug
+		{8CB87BCC-7D74-4BDC-9CAF-1092C56993AB}.Debug|x64.ActiveCfg = Debug
+		{8CB87BCC-7D74-4BDC-9CAF-1092C56993AB}.Release|Any CPU.ActiveCfg = Release
+		{8CB87BCC-7D74-4BDC-9CAF-1092C56993AB}.Release|x64.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

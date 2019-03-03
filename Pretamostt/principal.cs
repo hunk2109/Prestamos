@@ -333,14 +333,14 @@ namespace Pretamostt
             {
                 if (rbadmin.Checked == true)
                 {
-                    oper.consultasinreaultado("update usua_sesion set usuario ='" + txtagreusua.Text + "',contraseña ='" + txtagrecontra.Text + "',tipo_usua_id_tipo_user ='1' ");
+                    oper.consultasinreaultado("update usua_sesion set usuario ='" + txtagreusua.Text + "',contraseña ='" + txtagrecontra.Text + "',tipo_usua_id_tipo_user ='1' where id_user = '"+txtidusua_ses.Text+"' ");
                     MessageBox.Show("Datos actualisados");
                     dgvusuarios.DataSource = oper.cosnsultaconresultado("select * from usua_sesion");
                 }
 
                 else if(rbempl.Checked ==true)
                 {
-                    oper.consultasinreaultado("update usua_sesion set usuario ='" + txtagreusua.Text + "',contraseña ='" + txtagrecontra.Text + "',tipo_usua_id_tipo_user ='2' ");
+                    oper.consultasinreaultado("update usua_sesion set usuario ='" + txtagreusua.Text + "',contraseña ='" + txtagrecontra.Text + "',tipo_usua_id_tipo_user ='2' where id_user = '" + txtidusua_ses.Text + "' ");
                     MessageBox.Show("Datos actualisados");
                     dgvusuarios.DataSource = oper.cosnsultaconresultado("select * from usua_sesion");
 
