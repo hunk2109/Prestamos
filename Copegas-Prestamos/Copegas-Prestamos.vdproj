@@ -304,13 +304,13 @@
         "Entry"
         {
         "MsmKey" = "8:_B9B00E705073E5E6F173CC362A57E040"
-        "OwnerKey" = "8:_B8D9D1AB13A10021A9B82A96497162D5"
+        "OwnerKey" = "8:_C311808D95A140F39E78E111BD7FF997"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_B9B00E705073E5E6F173CC362A57E040"
-        "OwnerKey" = "8:_C311808D95A140F39E78E111BD7FF997"
+        "OwnerKey" = "8:_B8D9D1AB13A10021A9B82A96497162D5"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -478,7 +478,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_F9E08863D0200BF5C1F882C7D43167E3"
+        "OwnerKey" = "8:_B9B00E705073E5E6F173CC362A57E040"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -533,12 +533,6 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_B8D9D1AB13A10021A9B82A96497162D5"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_B9B00E705073E5E6F173CC362A57E040"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -601,6 +595,12 @@
         "OwnerKey" = "8:_8CB31F86B86A46C125746BFDD34340B2"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_F9E08863D0200BF5C1F882C7D43167E3"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -646,6 +646,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -1321,6 +1329,18 @@
         }
         "Folder"
         {
+            "{994432C3-9487-495D-8656-3E829A8DBDDE}:_4934CF6241B54AA582DBC57AD63756BE"
+            {
+            "DefaultLocation" = "8:[TARGETDIR]"
+            "Name" = "8:factura"
+            "AlwaysCreate" = "11:TRUE"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Property" = "8:NEWPROPERTY1"
+                "Folders"
+                {
+                }
+            }
             "{3C67513D-01DD-4637-8A68-80971EB9504F}:_678A45F36564458896BB53AC7D916BFD"
             {
             "DefaultLocation" = "8:[ProgramFiles64Folder][Manufacturer]\\[ProductName]"
@@ -1372,7 +1392,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Copegas-Prestamos"
         "ProductCode" = "8:{C37F7405-B2CF-48B4-B805-A818A9A6BACA}"
-        "PackageCode" = "8:{8B2CE9D8-39A0-4ABD-A2A4-646C05AA29D9}"
+        "PackageCode" = "8:{27B1EB8C-D432-4F00-BA74-036FEA393B8B}"
         "UpgradeCode" = "8:{A60FE8E1-D1A1-49ED-8D58-34D8C35A0A43}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
