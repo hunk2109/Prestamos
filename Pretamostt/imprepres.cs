@@ -5,14 +5,13 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Pretamostt
 {
-    public partial class visorimp : Form
+    public partial class imprepres : Form
     {
-        public visorimp()
+        public imprepres()
         {
             InitializeComponent();
         }

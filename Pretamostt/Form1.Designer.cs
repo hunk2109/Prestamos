@@ -89,6 +89,7 @@
             this.btnlimpiar.TabIndex = 5;
             this.btnlimpiar.Text = "Limpiar";
             this.btnlimpiar.UseVisualStyleBackColor = true;
+            this.btnlimpiar.Click += new System.EventHandler(this.btnlimpiar_Click);
             // 
             // label3
             // 
@@ -109,6 +110,7 @@
             this.cmbtipouser.Name = "cmbtipouser";
             this.cmbtipouser.Size = new System.Drawing.Size(152, 21);
             this.cmbtipouser.TabIndex = 7;
+            this.cmbtipouser.Text = "Empleado";
             // 
             // Form1
             // 

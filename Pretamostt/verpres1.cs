@@ -16,14 +16,14 @@ namespace Pretamostt {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class imppres : ReportClass {
+    public class verpres1 : ReportClass {
         
-        public imppres() {
+        public verpres1() {
         }
         
         public override string ResourceName {
             get {
-                return "imppres.rpt";
+                return "verpres1.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Pretamostt {
         
         public override string FullResourceName {
             get {
-                return "Pretamostt.imppres.rpt";
+                return "Pretamostt.verpres1.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace Pretamostt {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class Cachedimppres : Component, ICachedReport {
+    public class Cachedverpres1 : Component, ICachedReport {
         
-        public Cachedimppres() {
+        public Cachedverpres1() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace Pretamostt {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            imppres rpt = new imppres();
+            verpres1 rpt = new verpres1();
             rpt.Site = this.Site;
             return rpt;
         }

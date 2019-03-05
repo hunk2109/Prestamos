@@ -43,9 +43,9 @@ namespace Pretamostt
         {
             dgvverclie.DataSource = oper.cosnsultaconresultado("Select * from usuarios where tipo_usua_id_tipo_user = 3 ");
             dgvclienp.DataSource = oper.cosnsultaconresultado("Select * from usuarios where tipo_usua_id_tipo_user = 3 ");
-            dgvprestamos.DataSource = oper.cosnsultaconresultado("select id_pres, nombres, apellidos,cedula,cantidad, meses,interes,cantidad*(interes/100) as i1,((cantidad*(interes/100)) +cantidad)/meses as cuotas,Garantia  from Usuarios inner join prestamo on id_cliente = Usuarios_id_cliente");
-            dgvprespag.DataSource = oper.cosnsultaconresultado("select id_pres, nombres, apellidos,cedula,cantidad, meses,(cantidad/meses) as cuotas,Garantia  from Usuarios inner join prestamo on id_cliente = Usuarios_id_cliente");
-            dgvverpagos.DataSource = oper.cosnsultaconresultado("select Usuarios.nombres,Usuarios.Apellidos,Usuarios.cedula, prestamo.fecha, prestamo.cantidad,Pagos.cant_pagada,(prestamo.cantidad-Pagos.cant_pagada) as monto_restante, prestamo.id_pres,Pagos.id_pago  from pagos inner join prestamo on id_pres = prestamo_id_pres inner join Usuarios on id_cliente = Usuarios_id_cliente;");
+            dgvprestamos.DataSource = oper.cosnsultaconresultado("select id_pres, nombres, apellidos,cedula,cantidad, meses,interes,convert(decimal(18,2),cantidad*(interes/100)) as i1,convert(decimal(18,2),((cantidad*(interes/100)) +cantidad)/meses) as cuotas,Garantia  from Usuarios inner join prestamo on id_cliente = Usuarios_id_cliente");
+            dgvprespag.DataSource = oper.cosnsultaconresultado("select id_pres, nombres, apellidos,cedula,cantidad, meses,convert(decimal(18,2),(cantidad/meses)) as cuotas,Garantia  from Usuarios inner join prestamo on id_cliente = Usuarios_id_cliente");
+            dgvverpagos.DataSource = oper.cosnsultaconresultado("select Usuarios.nombres,Usuarios.Apellidos,Usuarios.cedula, prestamo.fecha, prestamo.cantidad,Pagos.cant_pagada,(prestamo.cantidad-(select sum(Pagos.cant_pagada)) as monto_restante, prestamo.id_pres,Pagos.id_pago  from pagos inner join prestamo on id_pres = prestamo_id_pres inner join Usuarios on id_cliente = Usuarios_id_cliente group by prestamo.cantidad;");
             dgvclientbuscarm.DataSource = oper.cosnsultaconresultado("Select * from usuarios where tipo_usua_id_tipo_user = 3 ");
             dgvusuarios.DataSource = oper.cosnsultaconresultado("select * from usua_sesion");
             dgvmoodprest.DataSource = oper.cosnsultaconresultado("select id_pres, nombres,apellidos,cantidad,meses,interes,fecha,Garantia from prestamo inner join Usuarios on id_cliente = Usuarios_id_cliente");
@@ -150,10 +150,10 @@ namespace Pretamostt
         private void btnimprp_Click(object sender, EventArgs e)
         {
             DataSet ds = new DataSet();
-            DataTable dt = oper.cosnsultaconresultado("select id_pres, nombres, apellidos,cedula,cantidad, meses,(cantidad/meses) as cuotas,Garantia  from Usuarios inner join prestamo on id_cliente = Usuarios_id_cliente where id_pres = '" + txtidpresimpr.Text + "';");
+            DataTable dt = oper.cosnsultaconresultado("select id_pres, nombres, apellidos,cedula,cantidad, meses,interes,convert(decimal(18,2),cantidad*(interes/100)) as i1,convert(decimal(18,2),((cantidad*(interes/100)) +cantidad)/meses) as cuotas,Garantia  from Usuarios inner join prestamo on id_cliente = Usuarios_id_cliente where id_pres = '" + txtidpresimpr.Text + "';");
             ds.Tables.Add(dt);
             ds.WriteXml(@"C:\factura\prestamo.xml");
-            visorimp f = new visorimp();
+            imprepres f = new imprepres();
             f.Show();
 
 
@@ -168,7 +168,7 @@ namespace Pretamostt
         private void btnpag_Click(object sender, EventArgs e)
         {
             oper.consultasinreaultado("insert into pagos(cant_pagada,fecha,prestamo_id_pres)values('" + txtcanpag.Text + "','" + dtppag.Text + "','" + txtidprespag.Text + "')");
-            dgvverpagos.DataSource = oper.cosnsultaconresultado("select * from pagos");
+            dgvverpagos.DataSource = oper.cosnsultaconresultado("select Usuarios.nombres,Usuarios.Apellidos,Usuarios.cedula, prestamo.fecha, prestamo.cantidad,Pagos.cant_pagada,(prestamo.cantidad-Pagos.cant_pagada) as monto_restante, prestamo.id_pres,Pagos.id_pago  from pagos inner join prestamo on id_pres = prestamo_id_pres inner join Usuarios on id_cliente = Usuarios_id_cliente;");
             MessageBox.Show("Pago ingresado!");
             txtidprespag.Clear();
             txtcanpag.Clear();

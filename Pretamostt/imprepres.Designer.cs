@@ -1,6 +1,6 @@
 ﻿namespace Pretamostt
 {
-    partial class visorimp
+    partial class imprepres
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.imppres1 = new Pretamostt.imppres();
+            this.verpres11 = new Pretamostt.verpres1();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
@@ -40,18 +40,18 @@
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ReportSource = this.imppres1;
+            this.crystalReportViewer1.ReportSource = this.verpres11;
             this.crystalReportViewer1.Size = new System.Drawing.Size(800, 450);
             this.crystalReportViewer1.TabIndex = 0;
             // 
-            // visorimp
+            // imprepres
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.crystalReportViewer1);
-            this.Name = "visorimp";
-            this.Text = "visorimp";
+            this.Name = "imprepres";
+            this.Text = "imprepres";
             this.ResumeLayout(false);
 
         }
@@ -59,6 +59,6 @@
         #endregion
 
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
-        private imppres imppres1;
+        private verpres1 verpres11;
     }
 }

@@ -100,6 +100,12 @@ namespace Pretamostt
 
             }
 
+        private void btnlimpiar_Click(object sender, EventArgs e)
+        {
+            txtuser.Clear();
+            txtpass.Clear();
+            cmbtipouser.Text = ("");
         }
+    }
     }
 
